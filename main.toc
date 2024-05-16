@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Kinematics}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Vector notation}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Skew matrix notation}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Rotation matrices}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Properties of rotation matrices}{3}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}Other stuff that might be usefull}{3}{subsection.1.4}%

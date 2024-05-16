@@ -1,0 +1,83 @@
+\documentclass[11pt, a4paper, USenglish]{article} % change ``USenglish'' to ``norsk'' if applicable.
+
+\usepackage{graphicx} % Provides the \includegraphics command.
+\usepackage{hyperref} % Provides clickable links. Always load last, but before cleveref
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cancel}
+
+\usepackage{svg}
+\usepackage{adjustbox}
+\usepackage{pdfpages}
+
+\usepackage{float}
+\usepackage{placeins} % Include the placeins package at the beginning of your document
+\usepackage{subcaption} % Include the subcaption package at the beginning of your document
+\usepackage{caption} % Include the caption package at the beginning of your document
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+\usepackage{circuitikz} % for circuit diagrams
+
+\usepackage{listings} % Include the listings package
+\usepackage{xcolor} % for setting colors
+
+% Define the MATLAB style
+\lstdefinestyle{MATLAB}{
+    language=Matlab, % Use the MATLAB language
+    frame=single, % Add a frame around the code
+    breaklines=true, % Allow line breaks
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Indicate line breaks with a red arrow
+    numbers=left, % Line numbers on the left
+    numberstyle=\tiny\color{gray}, % Line numbers are tiny and gray
+    commentstyle=\color{green}, % Comments are green
+    stringstyle=\color{purple}, % Strings are purple
+    keywordstyle=\color{blue}, % Keywords are blue
+    basicstyle=\ttfamily % Use the typewriter font
+}
+
+%% To easily include matlab code, I would recommend to have a look at this answer https://tex.stackexchange.com/a/158816 which has nice examples.
+
+%% It uses: https://ctan.org/pkg/matlab-prettifier
+
+\begin{document}
+
+% Titlepage
+\title{TTK4130 Modelling and simulation}
+\author{Gutta på MS}
+\date{\today}
+\begin{titlepage}
+    \maketitle
+    \begin{center}
+    \includegraphics[scale=1, trim={7cm 12.5cm 7cm 9.4cm}, clip]{figures/wagon.pdf}
+    \captionof*{figure}{\textit{Wagon with inverted pendulum}}
+    \vfill % Add vertical space that expands to fill the available space
+    \includegraphics[scale=0.4]{figures/itk_ntnu}\\
+    Department of Engineering Cybernetics
+    \end{center}
+    \thispagestyle{empty}
+\end{titlepage}
+
+% TOC
+\newpage
+\tableofcontents
+\thispagestyle{empty} % Avoid page numbering on the table of contents.
+
+
+% Main content
+\newpage
+\setcounter{page}{1}
+\include{kinematics}
+\include{Newton_Euler}
+\include{Lagrange}
+
+
+
+% References
+%\newpage
+%\addcontentsline{toc}{section}{References}
+%\bibliographystyle{unsrt}
+%\bibliography{bibliography.bib}
+%\label{sec:bibliography}
+
+\end{document}
