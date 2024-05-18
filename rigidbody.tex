@@ -2,39 +2,74 @@
 A \textbf{rigid body}; the distances between any two points within the body remain constant regardless of the external forces and torques applied to it.
 \\
 \\
-
 \textbf{Degrees of Freedom:} A rigid body in three-dimensional space has six degrees of freedom: three translational (movement along the x, y, and z axes) and three rotational (rotation about the x, y, and z axes).
-\\
-\\
-\subsection{Equation of motion}
 
-Rigid body dynamics is governed by Newton's laws of motion and Euler's rotation equations:
+\subsection{Newton-Euler Equations for Motion}
 
-\subsection{Newton’s Second Law for Translation}
+The Newton-Euler equations describe the motion of a rigid body by combining the translational motion of the body's center of mass and the rotational motion about the center of mass. These equations can be broken down into two main parts: the translational equations and the rotational equations.
+
+\subsection{Translational Motion (Newton's Second Law)}
+
+The translational motion of the rigid body is governed by Newton's second law, which states that the rate of change of linear momentum of the body is equal to the sum of external forces acting on it. Mathematically, this is expressed as:
+
+\[
+\vec{F}_{\text{ext}} = m \vec{a}_{\text{cm}}
+\]
+
+where:
+\begin{itemize}
+    \item \( \vec{F}_{\text{ext}} \) is the resultant external force acting on the body.
+    \item \( m \) is the mass of the body.
+    \item \( \vec{a}_{\text{cm}} \) is the linear acceleration of the center of mass of the body.
+\end{itemize}
+
+\subsection{Rotational Motion (Euler's Equations)}
+
+The rotational motion of the rigid body is described by Euler's equations, which relate the rate of change of angular momentum to the external moments (torques) acting on the body. These equations are given by:
+
+\[
+\vec{T}_{\text{ext}} = \frac{d \vec{H}}{dt} + \vec{\omega} \times \vec{H}
+\]
+
+where:
+\begin{itemize}
+    \item \( \vec{T}_{\text{ext}} \) is the resultant external moment (torque) acting on the body.
+    \item \( \vec{H} = \mathbf{J} \vec{\omega} \) is the angular momentum of the body.
+    \item \( \mathbf{J} \) is the inertia tensor of the body.
+    \item \( \vec{\omega} \) is the angular velocity of the body.
+    \item \( \frac{d \vec{H}}{dt} \) is the time derivative of the angular momentum.
+    \item \( \vec{\omega} \times \vec{H} \) is the term representing the gyroscopic effect.
+\end{itemize}
+
+\subsection{Combined Newton-Euler Equations}
+
+Combining the translational and rotational equations, the complete Newton-Euler equations for the motion of a rigid body are:
+
+\[
+\vec{F}_{\text{ext}} = m \vec{a}_{\text{cm}}
+\]
 
 \begin{equation}
-\Sigma\mathbf{F} = m \mathbf{a}
-\end{equation}
-where 
-\(\mathbf{F}\) is the net force acting on the body, 
-\(m\) is the mass of the body, and 
-\(\mathbf{a}\) is the linear acceleration of the center of mass.
-
-\subsection{Newton’s Second Law for Rotation (Euler’s Equations)}
-
-\begin{equation}
-\Sigma\mathbf{T} = \mathbf{J} \boldsymbol{\alpha} + \boldsymbol{\omega} \times (\mathbf{J} \boldsymbol{\omega})
+\Sigma\vec{T} = \mathbf{J} \vec{\alpha} + \vec{\omega} \times (\mathbf{J} \vec{\omega})
 \end{equation}
 
-where 
-\(\mathbf{T}\) is the net torque, 
-\(\mathbf{J}\) is the inertia matrix, 
-\(\boldsymbol{\alpha}\) is the angular acceleration (\(\boldsymbol{\Dot{\omega}}\)), and 
-\(\boldsymbol{\omega}\) is the angular velocity.
+These equations provide a comprehensive description of the motion of a rigid body, accounting for both the linear acceleration of the center of mass and the angular acceleration about the center of mass. 
+\subsection{Explanation of Terms}
+
+\begin{itemize}
+    \item \textbf{Resultant External Force} (\( \vec{F}_{\text{ext}} \)): This is the vector sum of all external forces acting on the body. It influences the translational motion of the body's center of mass.
+    \item \textbf{Mass} (\( m \)): The mass of the rigid body.
+    \item \textbf{Linear Acceleration of Center of Mass} (\( \vec{a}_{\text{cm}} \)): The acceleration of the center of mass of the body due to external forces.
+    \item \textbf{Resultant External Moment (Torque)} (\( \vec{T} \)): This is the vector sum of all external torques acting on the body. It influences the rotational motion of the body.
+    \item \textbf{Angular Momentum} (\( \vec{H} \)): The product of the inertia tensor and the angular velocity of the body, representing the rotational state of the body.
+    \item \textbf{Inertia Tensor} (\( \mathbf{J} \)): A matrix that represents the distribution of mass in the body relative to the center of mass.
+    \item \textbf{Angular Velocity} (\( \vec{\omega} \)): The rate of rotation of the body.
+    \item \textbf{Gyroscopic Effect} (\( \vec{\omega} \times \vec{H} \)): A term representing the precessional motion caused by the body's rotation.
+\end{itemize}
+
+These Newton-Euler equations form the foundation for analyzing the dynamics of rigid bodies in both translational and rotational motion.
 \\
 \\
-
-
 
 
 The inertia matrix \textbf{J} is a 3×3 symmetric matrix that represents the rotational inertia (treghet) of a rigid body. It is defined with respect to a coordinate system whose origin is at a point (often the center of mass) and aligned with the principal axes of the body.
