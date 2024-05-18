@@ -1,0 +1,47 @@
+\section{Rigid body, i have a rigid body ahhhh}
+A \textbf{rigid body}; the distances between any two points within the body remain constant regardless of the external forces and torques applied to it.
+\\
+\\
+
+\textbf{Degrees of Freedom:} A rigid body in three-dimensional space has six degrees of freedom: three translational (movement along the x, y, and z axes) and three rotational (rotation about the x, y, and z axes).
+\\
+\\
+\subsection{Equation of motion}
+
+Rigid body dynamics is governed by Newton's laws of motion and Euler's rotation equations:
+
+\subsection{Newton’s Second Law for Translation}
+
+\begin{equation}
+\Sigma\mathbf{F} = m \mathbf{a}
+\end{equation}
+where 
+\(\mathbf{F}\) is the net force acting on the body, 
+\(m\) is the mass of the body, and 
+\(\mathbf{a}\) is the linear acceleration of the center of mass.
+
+\subsection{Newton’s Second Law for Rotation (Euler’s Equations)}
+
+\begin{equation}
+\Sigma\mathbf{T} = \mathbf{J} \boldsymbol{\alpha} + \boldsymbol{\omega} \times (\mathbf{J} \boldsymbol{\omega})
+\end{equation}
+
+where 
+\(\mathbf{T}\) is the net torque, 
+\(\mathbf{J}\) is the inertia matrix, 
+\(\boldsymbol{\alpha}\) is the angular acceleration (\(\boldsymbol{\Dot{\omega}}\)), and 
+\(\boldsymbol{\omega}\) is the angular velocity.
+\\
+\\
+
+
+
+
+The inertia matrix \textbf{J} is a 3×3 symmetric matrix that represents the rotational inertia (treghet) of a rigid body. It is defined with respect to a coordinate system whose origin is at a point (often the center of mass) and aligned with the principal axes of the body.
+\[
+\mathbf{J} = \begin{bmatrix}
+    J_{xx} & J_{xy} & J_{xz} \\
+    J_{yx} & J_{yy} & J_{yz} \\
+    J_{zx} & J_{zy} & J_{zz}
+\end{bmatrix}
+\]

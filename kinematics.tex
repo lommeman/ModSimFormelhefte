@@ -79,6 +79,104 @@ A couple of maybe interesting properties of rotation matrices:
     \end{align}
 \end{subequations}
 Where the vector $\vec{\omega}_{ab}^a$ is the angular velocity vector from frame \textit{b} relative to frame \textit{b} with respect to frame \textit{a}.
+
+\subsection{Linear and Angular Velocities and Acceleration in Different Frames}
+
+Let \( \{0\} \) be the reference frame with coordinates \( x_0, y_0, z_0 \) and \( \{b\} \) be the body frame with coordinates \( x_b, y_b, z_b \). The vector \( \mathbf{e}_i \) represents the axis of rotation.
+
+\subsection{Linear Velocity}
+
+The linear velocity \( \mathbf{v}_{p/0} \) of a point \( p \) in the body frame \( \{b\} \) relative to the reference frame \( \{0\} \) is given by:
+
+\[
+\mathbf{v}_{p/0} = \mathbf{v}_0 + \mathbf{\omega}_{b/0} \times \mathbf{r}_{p/b}
+\]
+
+where:
+\begin{itemize}
+    \item \( \mathbf{v}_{p/0} \) is the linear velocity of point \( p \) in frame \( \{b\} \) relative to frame \( \{0\} \).
+    \item \( \mathbf{v}_0 \) is the linear velocity of the origin of frame \( \{b\} \) relative to frame \( \{0\} \).
+    \item \( \mathbf{\omega}_{b/0} \) is the angular velocity of frame \( \{b\} \) relative to frame \( \{0\} \).
+    \item \( \mathbf{r}_{p/b} \) is the position vector from the origin of frame \( \{b\} \) to the point \( p \) in frame \( \{b\} \).
+\end{itemize}
+
+\subsection{Linear Velocity with Time-Dependent Point \( p \)}
+
+If the point \( p \) is a function of time, the linear velocity \( \mathbf{v}_{p/0} \) of a point \( p \) in the body frame \( \{b\} \) relative to the reference frame \( \{0\} \) is given by:
+
+\[
+\mathbf{v}_{p/0} = \mathbf{v}_{b/0} + \mathbf{\omega}_{b/0} \times \mathbf{r}_{p/b} + \mathbf{v}_{p/b}
+\]
+
+where \( \mathbf{v}_{p/b} \) is the velocity of point \( p \) relative to the body frame \( \{b\} \), given by:
+
+\[
+\mathbf{v}_{p/b} = \dot{p}_x \mathbf{i}_b + \dot{p}_y \mathbf{j}_b + \dot{p}_z \mathbf{k}_b
+\]
+
+Here, \( \dot{p}_x, \dot{p}_y, \dot{p}_z \) are the time derivatives of the coordinates of point \( p \) in the body frame.
+
+
+\begin{itemize}
+    \item \textbf{Linear Velocity}: Linear velocity can be thought of as the speed and direction at which a point on the body is moving relative to the fixed reference frame. It combines the translational movement of the entire body (described by \( \mathbf{v}_0 \)) with the rotational effect (described by \( \mathbf{\omega}_{b/0} \times \mathbf{r}_{p/b} \)).
+    
+    \item \textbf{Angular Velocity}: Angular velocity describes how quickly and about which axis the body is rotating. The vector \( \mathbf{\omega}_{b/0} \) points along the axis of rotation \( \mathbf{e}_i \), and its magnitude \( \dot{\theta} \) indicates the rate of rotation.
+\end{itemize}
+
+\subsection{Angular Velocity}
+
+The angular velocity \( \mathbf{\omega}_{p} \) of point \( p \) is given by the sum of all contributing angular velocities:
+
+\[
+\vec{\omega_{p}} = \sum_{i} \omega_i \vec{e}_i
+\]
+
+where \( \omega_i \) are the individual angular velocity components about their respective principal axes \( \mathbf{e}_i \) representing the axis of rotation (it could be along $x_b$, $y_b$, or $z_b$).
+
+\subsection{Angular Acceleration}
+
+The angular acceleration \( \mathbf{\alpha}_{p} \) of point \( p \) is given by:
+
+\[
+\vec{\alpha_{p}} = \sum_{i} \dot{\omega}_i \vec{e}_i + \omega_i (\mathbf{\Omega}_i \times \vec{e}_i)
+\]
+
+where:
+\begin{itemize}
+    \item \( \dot{\omega}_i \) is the time derivative of the angular velocity component \( \omega_i \).
+    \item \( \mathbf{\Omega}_i \) is the angular velocity of the reference frame of \( \mathbf{e}_i \).
+    \item \( \mathbf{e}_i \) are the principal axes of the reference frame.
+\end{itemize}
+
+\subsection{Linear Acceleration}
+
+The linear acceleration \( \mathbf{a}_{p/0} \) of point \( p \) relative to the reference frame \( \{0\} \) is given by:
+
+\[
+\mathbf{a}_{p/0} = \mathbf{a}_{b/0} + \mathbf{a}_{p/b} + \mathbf{\alpha}_{b/0} \times \mathbf{r}_{p/b} + \mathbf{\omega}_{b/0} \times (\mathbf{\omega}_{b/0} \times \mathbf{r}_{p/b}) + 2 \mathbf{\omega}_{b/0} \times \mathbf{v}_{p/b}
+\]
+
+where:
+\begin{itemize}
+    \item \( \mathbf{a}_{b/0} \) is the acceleration of the origin of the body frame \( \{b\} \) relative to the reference frame \( \{0\} \).
+    \item \( \mathbf{a}_{p/b} \) is the acceleration of point \( p \) relative to the body frame \( \{b\} \).
+    \item \( \mathbf{\alpha}_{b/0} \) is the angular acceleration of the body frame \( \{b\} \) relative to the reference frame \( \{0\} \).
+    \item \( \mathbf{\omega}_{b/0} \) is the angular velocity of the body frame \( \{b\} \) relative to the reference frame \( \{0\} \).
+    \item \( \mathbf{r}_{p/b} \) is the position vector from the origin of the body frame \( \{b\} \) to point \( p \) in frame \( \{b\} \).
+\end{itemize}
+
+\subsection{Explanation of Acceleration Components}
+
+\begin{itemize}
+    \item \textbf{Acceleration of Origin of Body Frame} (\( \mathbf{a}_{b/0} \)): This term represents the linear acceleration of the origin of the body frame \( \{b\} \) relative to the reference frame \( \{0\} \).
+    \item \textbf{Acceleration of Point within Body Frame} (\( \mathbf{a}_{p/b} \)): This term represents the linear acceleration of point \( p \) within the body frame \( \{b\} \).
+    \item \textbf{Linear Acceleration due to Angular Acceleration} (\( \mathbf{\alpha}_{b/0} \times \mathbf{r}_{p/b} \)): This term accounts for the linear acceleration of point \( p \) due to the angular acceleration of the body frame \( \{b\} \).
+    \item \textbf{Centripetal Acceleration} (\( \mathbf{\omega}_{b/0} \times (\mathbf{\omega}_{b/0} \times \mathbf{r}_{p/b}) \)): This term represents the centripetal acceleration, which is the acceleration of point \( p \) due to its rotational motion about the origin of the body frame \( \{b\} \).
+    \item \textbf{Coriolis Acceleration} (\( 2 \mathbf{\omega}_{b/0} \times \mathbf{v}_{p/b} \)): This term represents the Coriolis acceleration, which arises when point \( p \) is moving within the rotating body frame \( \{b\} \).
+\end{itemize}
+
+
+
 \subsection{Other stuff that might be usefull}
 \textbf{Linear momentum} does not depend upn its point of reference:
 \begin{subequations}
