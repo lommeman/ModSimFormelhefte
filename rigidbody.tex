@@ -66,12 +66,8 @@ These equations provide a comprehensive description of the motion of a rigid bod
     \item \textbf{Angular Velocity} (\( \vec{\omega} \)): The rate of rotation of the body.
     \item \textbf{Gyroscopic Effect} (\( \vec{\omega} \times \vec{H} \)): A term representing the precessional motion caused by the body's rotation.
 \end{itemize}
-
-These Newton-Euler equations form the foundation for analyzing the dynamics of rigid bodies in both translational and rotational motion.
 \\
 \\
-
-
 The inertia matrix \textbf{J} is a 3×3 symmetric matrix that represents the rotational inertia (treghet) of a rigid body. It is defined with respect to a coordinate system whose origin is at a point (often the center of mass) and aligned with the principal axes of the body.
 \[
 \mathbf{J} = \begin{bmatrix}
@@ -80,3 +76,41 @@ The inertia matrix \textbf{J} is a 3×3 symmetric matrix that represents the rot
     J_{zx} & J_{zy} & J_{zz}
 \end{bmatrix}
 \]
+The diagonal elements of the inertia matrix, \( J_{xx} \), \( J_{yy} \), and \( J_{zz} \), are the moments of inertia about the x, y, and z axes, respectively. These measure the body's resistance to rotational motion around each axis, increasing with mass distribution farther from the axis.
+\\
+\\
+The off-diagonal elements, \( J_{xy} \), \( J_{xz} \), \( J_{yx} \), \( J_{yz} \), \( J_{zx} \), and \( J_{zy} \), are the products of inertia. They show how mass distribution with respect to one axis affects rotation around another axis. When the coordinate axes align with the principal axes, these products of inertia are zero, making the inertia matrix diagonal.
+\\
+\\
+If a body has planes of symmetry, the products of inertia with respect to those planes are zero:
+\begin{itemize}
+    \item One plane of symmetry makes the corresponding products of inertia zero.
+    \item Two orthogonal planes of symmetry make more products all products of inertia zero, resulting in a diagonal inertia matrix.
+\end{itemize}
+
+
+\subsection{Moments of Inertia}
+The moments of inertia describe how mass is distributed relative to an axis:
+\begin{align*}
+    J_{xx}' &= J_{xx} + m (y_0^2 + z_0^2) \\
+    J_{yy}' &= J_{yy} + m (x_0^2 + z_0^2) \\
+    J_{zz}' &= J_{zz} + m (x_0^2 + y_0^2)
+\end{align*}
+
+\subsection{Products of Inertia}
+The products of inertia describe how mass is distributed relative to two different axes:
+\begin{align*}
+    J_{xy}' &= J_{xy} + m x_0 y_0 \\
+    J_{yz}' &= J_{yz} + m y_0 z_0 \\
+    J_{zx}' &= J_{zx} + m z_0 x_0
+\end{align*}
+
+\subsection{Explanation}
+When the coordinate system is translated, the moments and products of inertia change:
+\begin{itemize}
+    \item New moments of inertia: \( J_{xx}', J_{yy}', J_{zz}' \) are calculated by adding the original moments of inertia to \( m \) times the square of the distance from the new origin to the respective original coordinate axes.
+    \item New products of inertia: \( J_{xy}', J_{yz}', J_{zx}' \) are calculated by adding the original products of inertia to \( m \) times the product of the distances from the new origin to the respective original coordinate axes.
+\end{itemize}
+
+
+
