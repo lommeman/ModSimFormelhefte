@@ -53,6 +53,7 @@ Combining the translational and rotational equations, the complete Newton-Euler 
 \Sigma\vec{T} = \mathbf{J} \vec{\alpha} + \vec{\omega} \times (\mathbf{J} \vec{\omega})
 \end{equation}
 
+This is also called angular momentum, denoted \( \dot{h_c}\) (?).
 These equations provide a comprehensive description of the motion of a rigid body, accounting for both the linear acceleration of the center of mass and the angular acceleration about the center of mass. 
 \subsection{Explanation of Terms}
 
@@ -157,19 +158,40 @@ A more general equation for the rotational dynamics of a rigid body is:
 \[
 \mathbf{J} \dot{\omega} + \vec{r}_{c/a} \times m \vec{a}_c = -mgL \sin \theta \hat{\mathbf{i}}_b
 \]
-where:
-\begin{itemize}
-    \item \( \mathbf{I} \): Moment of inertia tensor.
-    \item \( \dot{\omega} \): Angular acceleration vector.
-    \item \( \vec{r}_{c/a} \): Position vector of point \( A \) relative to the center of mass \( C \).
-    \item \( m \): Mass of the body.
-    \item \( \hat{\mathbf{i}}_b \): Unit vector in the direction of the axis \( b \).
-\end{itemize}
-
 \begin{itemize}
     \item The Parallel Axis Theorem is useful for adjusting the moment of inertia for a shifted axis but does not account for translational acceleration of the pivot.
     \item The generalized rotational dynamics equation includes terms for both rotational inertia and non-inertial effects.
 \end{itemize}
 
+The rotational dynamics of a rigid body are described by the equation:
+
+\[
+\mathbf{J} \dot{\boldsymbol{\omega}}^b + \boldsymbol{\omega} \times (\mathbf{J} \boldsymbol{\omega}) = \mathbf{T}_c
+\]
+
+
+For rotating bodies about point A:
+
+\[
+\dot{h_c} + \vec{r}_{c/a} \times m \vec{a}_c = \vec{T}_A
+\]
+where 
+\[
+\dot{h}_c = \mathbf{J} \vec{\omega} + \vec{\omega} \times (\mathbf{J} \vec{\omega})
+\]
+
+When point \( A \) is fixed in a reference frame of pure rotation, the inertia matrix \( \mathbf{J} \) is updated using the parallel axis theorem:
+
+\[
+\mathbf{J}_A = \mathbf{J}_{\text{cm}} + m \mathbf{d} \cdot \mathbf{d}^T - m \|\mathbf{d}\|^2 \mathbf{I}
+\]
+
+ $\textbf{d}$ is displacement vector from the center of mass to point \( A \). and $\textbf{I}$ is the identity matrix
+
+The updated rotational dynamics equation is:
+
+\[
+\mathbf{J}_A \dot{\boldsymbol{\omega}}^b + \boldsymbol{\omega} \times (\mathbf{J}_A \boldsymbol{\omega}) = \mathbf{T}_A
+\]
 
 
