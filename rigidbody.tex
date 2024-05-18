@@ -95,6 +95,9 @@ The Parallel Axis Theorem states that the moment of inertia \(J\) of a rigid bod
 J = J_{\text{cm}} + m d^2
 \]
 
+$d$ is the perpendicular distance between the center of mass axis and the new axis.
+\\
+\\
 The theorem indicates that the moment of inertia about any parallel axis can be found by adding the moment of inertia about the center of mass axis to the product of the mass and the square of the distance between the two axes.
 
 
@@ -134,6 +137,38 @@ This formula is used to transform the inertia tensor \(\mathbf{J}\) of a rigid b
     \item \(\mathbf{J}^0\): The inertia tensor in the new coordinate frame (frame \(0\)).
     \item \(\mathbf{R}^0_b\): The rotation matrix that transforms vectors from the original coordinate frame \(b\) to the new coordinate frame \(0\).
     \item \(\mathbf{R}^b_0\): The rotation matrix that transforms vectors from the new coordinate frame \(0\) back to the original coordinate frame \(b\). 
+\end{itemize}
+
+\subsection{Simple Physical Pendulum}
+The equation of motion for a simple physical pendulum (a uniform rod pivoted at one end) is:
+\[
+\frac{L^2 m}{3} \ddot{\theta} = -mgL \sin \theta
+\]
+where:
+\begin{itemize}
+    \item \( L \): Length of the rod.
+    \item \( m \): Mass of the rod.
+    \item \( \theta \): Angle of displacement from the vertical.
+    \item \( \ddot{\theta} \): Angular acceleration.
+\end{itemize}
+
+\subsection{Generalized Rotational Dynamics}
+A more general equation for the rotational dynamics of a rigid body is:
+\[
+\mathbf{J} \dot{\omega} + \vec{r}_{c/a} \times m \vec{a}_c = -mgL \sin \theta \hat{\mathbf{i}}_b
+\]
+where:
+\begin{itemize}
+    \item \( \mathbf{I} \): Moment of inertia tensor.
+    \item \( \dot{\omega} \): Angular acceleration vector.
+    \item \( \vec{r}_{c/a} \): Position vector of point \( A \) relative to the center of mass \( C \).
+    \item \( m \): Mass of the body.
+    \item \( \hat{\mathbf{i}}_b \): Unit vector in the direction of the axis \( b \).
+\end{itemize}
+
+\begin{itemize}
+    \item The Parallel Axis Theorem is useful for adjusting the moment of inertia for a shifted axis but does not account for translational acceleration of the pivot.
+    \item The generalized rotational dynamics equation includes terms for both rotational inertia and non-inertial effects.
 \end{itemize}
 
 
