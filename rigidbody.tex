@@ -112,5 +112,20 @@ When the coordinate system is translated, the moments and products of inertia ch
     \item New products of inertia: \( J_{xy}', J_{yz}', J_{zx}' \) are calculated by adding the original products of inertia to \( m \) times the product of the distances from the new origin to the respective original coordinate axes.
 \end{itemize}
 
+\subsection{Inertia Tensor Transformation (Rotation formula)}
+
+The formula for transforming the inertia tensor due to rotation is:
+
+\[ \mathbf{J}^0 = \mathbf{R}^0_b \mathbf{J} \mathbf{R}^b_0 \]
+
+This formula is used to transform the inertia tensor \(\mathbf{J}\) of a rigid body from its original coordinate frame (frame \(b\)) to a new coordinate frame (frame \(0\)) after a rotation.
+
+\begin{itemize}
+    \item \(\mathbf{J}\): The inertia tensor in the original coordinate frame (frame \(b\)).
+    \item \(\mathbf{J}^0\): The inertia tensor in the new coordinate frame (frame \(0\)).
+    \item \(\mathbf{R}^0_b\): The rotation matrix that transforms vectors from the original coordinate frame \(b\) to the new coordinate frame \(0\).
+    \item \(\mathbf{R}^b_0\): The rotation matrix that transforms vectors from the new coordinate frame \(0\) back to the original coordinate frame \(b\). 
+\end{itemize}
+
 
 
