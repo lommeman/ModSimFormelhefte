@@ -1,0 +1,50 @@
+
+\section{Lagrange modelling}
+\subsection{Generalized coordinates}
+The generalized coordinates are $\mathbf{q} \in \mathbb{R}^n$, where $n \geq \text{DOF}$. DOF is degrees of freedom, and is the number of independent coordinates needed to describe the configuration of a system. The generalized coordinates are not unique, and can be chosen in many ways. The choice of generalized coordinates is important, as it can simplify the equations of motion. The generalized velocities $\dot{\mathbf{q}}$ are the time derivatives of the generalized coordinates. The generalized accelerations $\ddot{\mathbf{q}}$ are the time derivatives of the generalized velocities. The generalized forces $\mathbf{Q}$ are the forces that act on the system.
+\subsection{Definition of the lagrangian $\mathcal{L}$}
+\begin{subequations}
+\begin{align}
+    \mathcal{L} &= T - V - \mathbf{z}^\top\mathbf{c}\\
+    \mathcal{L}(\mathbf{q}, \dot{\mathbf{q}}) &= T(\mathbf{q}, \dot{\mathbf{q}}) - V(\mathbf{q}) - \mathbf{z}^\top \mathbf{c(q)}
+    \label{eq:Euler_Lagrange}
+\end{align}
+\end{subequations}
+Where $T$ is the kinetic energy, $V$ is the potential energy, $\mathbf{q}$ is the generalized coordinates, $\dot{\mathbf{q}}$ is the generalized velocities, $z \in \mathbb{R}^n $ is the lagrangian multiplier and $n$ is the number of constraints. It is also valid to use $+\mathbf{z}^\top\mathbf{c}$. Equation \eqref{eq:Euler_Lagrange} \newline
+\begin{subequations}
+\begin{align}
+    T = \frac{1}{2}m\dot{\mathbf{p}}^\top\dot{\mathbf{p}} + \frac{1}{2}I\dot{\theta}^2 \\
+    \mathbf{\dot{p}} = \frac{\partial \mathbf{p}}{\partial \mathbf{q}}\dot{\mathbf{q}} \\
+    T = \frac{1}{2}mv^\top v + \frac{1}{2}I\omega^\top \omega \\
+    V = \underbrace{mgh}_{\text{gravity}}  + \underbrace{\frac{1}{2}kx^2}_{\text{potential energy in spring}}  \\
+    T = \frac{1}{2}\dot{\mathbf{q}}^\top\mathbf{W}\dot{\mathbf{q}} \\
+    \mathbf{W} = m\left(\frac{\partial \mathbf{p}}{\partial \mathbf{q}}\right)^\top \frac{\partial \mathbf{p}}{\partial \mathbf{q}} + \mathbf{\beta}^\top \mathbf{J}\mathbf{\beta}
+    \label{eq:mass_inertia_matrix}
+\end{align}
+\end{subequations}
+Where $m$ is the mass, $I$ is the inertia, $W$ is the mass inertia matrix, $p$ is the position vector, $\theta$ is the angle, $v$ is the velocity, $\omega$ is the angular velocity, $h$ is the height, $k$ is the spring constant, and $x$ is the displacement. \newline 
+If the object is a point mass, we don't use the inertia term $\frac{1}{2}I\dot{\theta}^2$. \newline
+As for equation \eqref{eq:mass_inertia_matrix}, $\mathbf{\omega} = \mathbf{\beta(q)\dot{q}}$ and $\mathbf{J}$ is the inertia matrix. \newline
+\subsection{System dynamics}
+With this lagrangian, we can describe the system dynamics. Let $\mathbf{Q}$ be the generalized forces, then the equations of motion are:
+\begin{subequations}
+    \begin{align}
+    \mathbf{Q} = \frac{\partial \mathbf{p}}{\partial \mathbf{q}}^\top \mathbf{F} \\
+    \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot{\mathbf{q}}}\right) - \frac{\partial \mathcal{L}}{\partial \mathbf{q}} - \frac{\partial \mathbf{c}}{\partial \mathbf{q}}\mathbf{z}= \mathbf{Q} \\
+    \frac{d}{dt}\mathbf{W}\mathbf{\dot{q}} - \frac{\partial \mathcal{L}}{\partial \mathbf{q}} = \mathbf{Q} \\
+    \mathbf{W}\mathbf{\ddot{q}} + \dot{\mathbf{W}}\mathbf{\dot{q}} - \frac{\partial T}{\partial \mathbf{q}} + \frac{\partial V}{\partial \mathbf{q}} = \mathbf{Q}
+    \end{align}    
+\end{subequations}
+Lastly, we have the \textit{\textbf{GOAT}} matrix, which you get by solving $\frac{d^2}{dt^2}\mathbf{c(q)} = 0$ and using the equation above:
+\begin{equation}
+    \begin{bmatrix}
+        \mathbf{W} & \frac{\partial \mathbf{c}}{\partial \mathbf{q}} \\
+        \left(\frac{\partial \mathbf{c}}{\partial \mathbf{q}}\right)^\top & 0
+    \end{bmatrix} \begin{bmatrix}
+        \mathbf{\ddot{q}} \\
+        \mathbf{z}
+    \end{bmatrix} = \begin{bmatrix}
+        \mathbf{Q} + \frac{\partial T}{\partial \mathbf{q}} - \dot{\mathbf{W}}\dot{\mathbf{q}} - \frac{\partial V}{\partial \mathbf{q}} \\
+        - \frac{\partial}{\partial \mathbf{q}} \left(\frac{\partial \mathbf{c}}{\partial \mathbf{q}}\dot{\mathbf{q}}\right) \mathbf{\dot{q}}
+    \end{bmatrix}
+\end{equation}
