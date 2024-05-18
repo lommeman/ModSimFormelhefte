@@ -1,0 +1,197 @@
+\section{Rigid body, i have a rigid body ahhhh}
+A \textbf{rigid body}; the distances between any two points within the body remain constant regardless of the external forces and torques applied to it.
+\\
+\\
+\textbf{Degrees of Freedom:} A rigid body in three-dimensional space has six degrees of freedom: three translational (movement along the x, y, and z axes) and three rotational (rotation about the x, y, and z axes).
+
+\subsection{Newton-Euler Equations for Motion}
+
+The Newton-Euler equations describe the motion of a rigid body by combining the translational motion of the body's center of mass and the rotational motion about the center of mass. These equations can be broken down into two main parts: the translational equations and the rotational equations.
+
+\subsection{Translational Motion (Newton's Second Law)}
+
+The translational motion of the rigid body is governed by Newton's second law, which states that the rate of change of linear momentum of the body is equal to the sum of external forces acting on it. Mathematically, this is expressed as:
+
+\[
+\vec{F}_{\text{ext}} = m \vec{a}_{\text{cm}}
+\]
+
+where:
+\begin{itemize}
+    \item \( \vec{F}_{\text{ext}} \) is the resultant external force acting on the body.
+    \item \( m \) is the mass of the body.
+    \item \( \vec{a}_{\text{cm}} \) is the linear acceleration of the center of mass of the body.
+\end{itemize}
+
+\subsection{Rotational Motion (Euler's Equations)}
+
+The rotational motion of the rigid body is described by Euler's equations, which relate the rate of change of angular momentum to the external moments (torques) acting on the body. These equations are given by:
+
+\[
+\vec{T}_{\text{ext}} = \frac{d \vec{H}}{dt} + \vec{\omega} \times \vec{H}
+\]
+
+where:
+\begin{itemize}
+    \item \( \vec{T}_{\text{ext}} \) is the resultant external moment (torque) acting on the body.
+    \item \( \vec{H} = \mathbf{J} \vec{\omega} \) is the angular momentum of the body.
+    \item \( \mathbf{J} \) is the inertia tensor of the body.
+    \item \( \vec{\omega} \) is the angular velocity of the body.
+    \item \( \frac{d \vec{H}}{dt} \) is the time derivative of the angular momentum.
+    \item \( \vec{\omega} \times \vec{H} \) is the term representing the gyroscopic effect.
+\end{itemize}
+
+\subsection{Combined Newton-Euler Equations}
+
+Combining the translational and rotational equations, the complete Newton-Euler equations for the motion of a rigid body are:
+
+\[
+\vec{F}_{\text{ext}} = m \vec{a}_{\text{cm}}
+\]
+
+\begin{equation}
+\Sigma\vec{T} = \mathbf{J} \vec{\alpha} + \vec{\omega} \times (\mathbf{J} \vec{\omega})
+\end{equation}
+
+This is also called angular momentum, denoted \( \dot{h_c}\) (?).
+These equations provide a comprehensive description of the motion of a rigid body, accounting for both the linear acceleration of the center of mass and the angular acceleration about the center of mass. 
+\subsection{Explanation of Terms}
+
+\begin{itemize}
+    \item \textbf{Resultant External Force} (\( \vec{F}_{\text{ext}} \)): This is the vector sum of all external forces acting on the body. It influences the translational motion of the body's center of mass.
+    \item \textbf{Mass} (\( m \)): The mass of the rigid body.
+    \item \textbf{Linear Acceleration of Center of Mass} (\( \vec{a}_{\text{cm}} \)): The acceleration of the center of mass of the body due to external forces.
+    \item \textbf{Resultant External Moment (Torque)} (\( \vec{T} \)): This is the vector sum of all external torques acting on the body. It influences the rotational motion of the body.
+    \item \textbf{Angular Momentum} (\( \vec{H} \)): The product of the inertia tensor and the angular velocity of the body, representing the rotational state of the body.
+    \item \textbf{Inertia Tensor} (\( \mathbf{J} \)): A matrix that represents the distribution of mass in the body relative to the center of mass.
+    \item \textbf{Angular Velocity} (\( \vec{\omega} \)): The rate of rotation of the body.
+    \item \textbf{Gyroscopic Effect} (\( \vec{\omega} \times \vec{H} \)): A term representing the precessional motion caused by the body's rotation.
+\end{itemize}
+\\
+\\
+The inertia matrix \textbf{J} is a 3×3 symmetric matrix that represents the rotational inertia (treghet) of a rigid body. It is defined with respect to a coordinate system whose origin is at a point (often the center of mass) and aligned with the principal axes of the body.
+\[
+\mathbf{J} = \begin{bmatrix}
+    J_{xx} & J_{xy} & J_{xz} \\
+    J_{yx} & J_{yy} & J_{yz} \\
+    J_{zx} & J_{zy} & J_{zz}
+\end{bmatrix}
+\]
+The diagonal elements of the inertia matrix, \( J_{xx} \), \( J_{yy} \), and \( J_{zz} \), are the moments of inertia about the x, y, and z axes, respectively. These measure the body's resistance to rotational motion around each axis, increasing with mass distribution farther from the axis.
+\\
+\\
+The off-diagonal elements, \( J_{xy} \), \( J_{xz} \), \( J_{yx} \), \( J_{yz} \), \( J_{zx} \), and \( J_{zy} \), are the products of inertia. They show how mass distribution with respect to one axis affects rotation around another axis. When the coordinate axes align with the principal axes, these products of inertia are zero, making the inertia matrix diagonal.
+\\
+\\
+If a body has planes of symmetry, the products of inertia with respect to those planes are zero:
+\begin{itemize}
+    \item One plane of symmetry makes the corresponding products of inertia zero.
+    \item Two orthogonal planes of symmetry make more products all products of inertia zero, resulting in a diagonal inertia matrix.
+\end{itemize}
+
+\subsection{Parallel Axis Theorem}
+The Parallel Axis Theorem states that the moment of inertia \(J\) of a rigid body about any axis is given by:
+
+\[
+J = J_{\text{cm}} + m d^2
+\]
+
+$d$ is the perpendicular distance between the center of mass axis and the new axis.
+\\
+\\
+The theorem indicates that the moment of inertia about any parallel axis can be found by adding the moment of inertia about the center of mass axis to the product of the mass and the square of the distance between the two axes.
+
+
+\subsection{Moments of Inertia}
+The moments of inertia describe how mass is distributed relative to an axis:
+\begin{align*}
+    J_{xx}' &= J_{xx} + m (y_0^2 + z_0^2) \\
+    J_{yy}' &= J_{yy} + m (x_0^2 + z_0^2) \\
+    J_{zz}' &= J_{zz} + m (x_0^2 + y_0^2)
+\end{align*}
+
+\subsection{Products of Inertia}
+The products of inertia describe how mass is distributed relative to two different axes:
+\begin{align*}
+    J_{xy}' &= J_{xy} + m x_0 y_0 \\
+    J_{yz}' &= J_{yz} + m y_0 z_0 \\
+    J_{zx}' &= J_{zx} + m z_0 x_0
+\end{align*}
+
+\subsection{Explanation}
+When the coordinate system is translated, the moments and products of inertia change:
+\begin{itemize}
+    \item New moments of inertia: \( J_{xx}', J_{yy}', J_{zz}' \) are calculated by adding the original moments of inertia to \( m \) times the square of the distance from the new origin to the respective original coordinate axes.
+    \item New products of inertia: \( J_{xy}', J_{yz}', J_{zx}' \) are calculated by adding the original products of inertia to \( m \) times the product of the distances from the new origin to the respective original coordinate axes.
+\end{itemize}
+
+\subsection{Inertia Tensor Transformation (Rotation formula)}
+
+The formula for transforming the inertia tensor due to rotation is:
+
+\[ \mathbf{J}^0 = \mathbf{R}^0_b \mathbf{J} \mathbf{R}^b_0 \]
+
+This formula is used to transform the inertia tensor \(\mathbf{J}\) of a rigid body from its original coordinate frame (frame \(b\)) to a new coordinate frame (frame \(0\)) after a rotation.
+
+\begin{itemize}
+    \item \(\mathbf{J}\): The inertia tensor in the original coordinate frame (frame \(b\)).
+    \item \(\mathbf{J}^0\): The inertia tensor in the new coordinate frame (frame \(0\)).
+    \item \(\mathbf{R}^0_b\): The rotation matrix that transforms vectors from the original coordinate frame \(b\) to the new coordinate frame \(0\).
+    \item \(\mathbf{R}^b_0\): The rotation matrix that transforms vectors from the new coordinate frame \(0\) back to the original coordinate frame \(b\). 
+\end{itemize}
+
+\subsection{Simple Physical Pendulum}
+The equation of motion for a simple physical pendulum (a uniform rod pivoted at one end) is:
+\[
+\frac{L^2 m}{3} \ddot{\theta} = -mgL \sin \theta
+\]
+where:
+\begin{itemize}
+    \item \( L \): Length of the rod.
+    \item \( m \): Mass of the rod.
+    \item \( \theta \): Angle of displacement from the vertical.
+    \item \( \ddot{\theta} \): Angular acceleration.
+\end{itemize}
+
+\subsection{Generalized Rotational Dynamics}
+A more general equation for the rotational dynamics of a rigid body is:
+\[
+\mathbf{J} \dot{\omega} + \vec{r}_{c/a} \times m \vec{a}_c = -mgL \sin \theta \hat{\mathbf{i}}_b
+\]
+\begin{itemize}
+    \item The Parallel Axis Theorem is useful for adjusting the moment of inertia for a shifted axis but does not account for translational acceleration of the pivot.
+    \item The generalized rotational dynamics equation includes terms for both rotational inertia and non-inertial effects.
+\end{itemize}
+
+The rotational dynamics of a rigid body are described by the equation:
+
+\[
+\mathbf{J} \dot{\boldsymbol{\omega}}^b + \boldsymbol{\omega} \times (\mathbf{J} \boldsymbol{\omega}) = \mathbf{T}_c
+\]
+
+
+For rotating bodies about point A:
+
+\[
+\dot{h_c} + \vec{r}_{c/a} \times m \vec{a}_c = \vec{T}_A
+\]
+where 
+\[
+\dot{h}_c = \mathbf{J} \vec{\omega} + \vec{\omega} \times (\mathbf{J} \vec{\omega})
+\]
+
+When point \( A \) is fixed in a reference frame of pure rotation, the inertia matrix \( \mathbf{J} \) is updated using the parallel axis theorem:
+
+\[
+\mathbf{J}_A = \mathbf{J}_{\text{cm}} + m \mathbf{d} \cdot \mathbf{d}^T - m \|\mathbf{d}\|^2 \mathbf{I}
+\]
+
+ $\textbf{d}$ is displacement vector from the center of mass to point \( A \). and $\textbf{I}$ is the identity matrix
+
+The updated rotational dynamics equation is:
+
+\[
+\mathbf{J}_A \dot{\boldsymbol{\omega}}^b + \boldsymbol{\omega} \times (\mathbf{J}_A \boldsymbol{\omega}) = \mathbf{T}_A
+\]
+
+
