@@ -1,0 +1,36 @@
+\subsection{Generalized Forces}
+A generalized force is a force acting along with the generalized coordinate.
+\\
+\\
+In a system described by generalized coordinates $q_i$, the generalized forces $Q_i$ are defined such that they account for the work done by all the actual forces acting on the system.
+\subsection{Work in Generalized Coordinates}
+The virtual work \( \delta W \) done by generalized forces \( Q_i \) during virtual displacements \( \delta q_i \) is given by:
+\[
+\delta W =  Q_i \delta q_i
+\]
+
+
+\subsection{Work by Physical Forces}
+For a system with physical forces \( \mathbf{F}_j \) acting at points with positions \( \mathbf{p}_j \), the virtual work done by these forces is:
+\[
+\delta W = \mathbf{F}_j^T \delta \mathbf{p}_j
+\]
+
+
+\subsection{Virtual Displacement}
+The virtual displacement \( \delta \mathbf{p}_j \) of the point \( \mathbf{p}_j \) can be expressed in terms of the virtual displacements in the generalized coordinates \( \delta q_i \):
+\[
+\delta \mathbf{p}_j = \sum_{i} \frac{\partial \mathbf{p}_j}{\partial q_i} \delta q_i
+\]
+
+% Generalized Forces in Terms of Physical Forces
+\subsection{Generalized Forces in Terms of Physical Forces}
+Substituting \( \delta \mathbf{p}_j \) into the expression for virtual work:
+\[
+\delta W = \mathbf{F}_j^T \left( \sum_{i} \frac{\partial \mathbf{p}_j}{\partial q_i} \delta q_i \right)
+\]
+
+Comparing with the generalized virtual work expression, we identify the generalized forces:
+\[
+Q_i = \sum_{j} \mathbf{F}_j^T \frac{\partial \mathbf{p}_j}{\partial q_i}
+\]
