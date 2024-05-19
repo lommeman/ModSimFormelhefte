@@ -1,0 +1,27 @@
+\section{State Space Formulations}
+
+\subsection{Equation of Motion}
+The equation of motion derived from Lagrangian mechanics is:
+\[
+W(q) \ddot{q} + \frac{\partial}{\partial q} (W(q) \dot{q}) \dot{q} - \frac{\partial L}{\partial q} = Q
+\]
+
+
+\subsection{Solving for Acceleration}
+Isolate \(\ddot{q}\):
+\[
+\ddot{q} = W^{-1}(q) \left[ \frac{\partial L}{\partial q} + Q - \frac{\partial}{\partial q} (W(q) \dot{q}) \dot{q} \right]
+\]
+
+\subsection{Acceleration Form}
+Define the state variables:
+\[
+x_1 = q, \quad x_2 = \dot{q}
+\]
+Express the equations of motion in state space form:
+\[
+\dot{x}_1 = x_2
+\]
+\[
+\dot{x}_2 = W^{-1}(x_1) \left[ \frac{\partial L}{\partial x_1} + Q - \frac{\partial}{\partial x_1} (W(x_1) x_2) x_2 \right]
+\]
