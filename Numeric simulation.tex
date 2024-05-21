@@ -1,0 +1,36 @@
+\section{Nummerical Simulation}
+
+\subsection{Explicit }
+
+\textbf{The Forward Euler method}
+\begin{subequations}
+\begin{align}
+    x_{k+1} = x_k + \Delta t \cdot f(x_k)\\
+    x_n = n \cdot \Delta t \cdot v \label{eq:Euler}
+\end{align}
+\end{subequations}
+
+This method is first order, which means global error E is proportional to step size h. 
+
+\subsection{Runke gutta 2: Mid Point Method }
+
+Want to evaluate \(\dot{x} = f(x)\) between \(t_k\) and \(t_{k+1}\) (omitting \(u\) and \(t\) for ease of notation):
+\begin{equation}
+x_{k+1} = x_k + \Delta t f\left( x \left( t_k + \frac{1}{2} \Delta t \right) \right)
+\end{equation}
+
+\subsection*{Euler Half-Step}
+Need to estimate \(x \left( t_k + \frac{1}{2} \Delta t \right)\):
+\begin{equation}
+x \left( t_k + \frac{1}{2} \Delta t \right) \approx x_k + \frac{1}{2} \Delta t f(x_k)
+\end{equation}
+
+The Mid-point Method can also be formulated as:
+
+\begin{align}
+k_1 &= f(x_k) \\
+k_2 &= f\left(x_k + \frac{1}{2} \Delta t k_1\right) \\
+x_{k+1} &= x_k + \Delta t k_2
+\end{align}
+
+The Mid-point method is second order.  This means the global error E is proportional to the square of the step size h.
