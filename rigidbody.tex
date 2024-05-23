@@ -28,25 +28,27 @@ where:
 \end{itemize}
 
 \subsection{Combined Newton-Euler Equations}
-
-Combining the translational and rotational equations, the complete Newton-Euler equations for the motion of a rigid body are:
-
-\[
-\vec{F}_{\text{ext}} = m \vec{a}_{\text{cm}}
-\]
+The Newton-Euler equations referenced to the center of mass are given by:
 
 \begin{equation}
-\Sigma\vec{T} = \mathbf{J} \vec{\alpha} + \vec{\omega} \times (\mathbf{J} \vec{\omega})
+    \mathbf{F}_{bc} = m \mathbf{a}_c
 \end{equation}
 
-This is also called angular momentum, denoted \( \dot{h_c}\) (?).
+\begin{equation}
+    \mathbf{T}_{bc} = \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
+\end{equation}
 
+In these equations:
 \begin{itemize}
-    \item \textbf{Angular Momentum} (\( \vec{H} \)): The product of the inertia tensor and the angular velocity of the body, representing the rotational state of the body.
-    \item \textbf{Gyroscopic Effect} (\( \vec{\omega} \times \vec{H} \)): A term representing the precessional motion caused by the body's rotation.
+    \item $\mathbf{F}_{bc}$: Force acting on the body at the center of mass
+    \item $m$: Total mass of the body
+    \item $\mathbf{a}_c$: Acceleration of the center of mass
+    \item $\mathbf{T}_{bc}$: Torque acting on the body at the center of mass
+    \item $\mathbf{M}_{b/c}$: Inertia matrix with respect to the center of mass
+    \item $\boldsymbol{\alpha}_{ib}$: Angular acceleration of the body relative to the inertial frame
+    \item $\boldsymbol{\omega}_{ib}$: Angular velocity of the body relative to the inertial frame
 \end{itemize}
-\\
-\\
+
 \subsection{Inertia matrix}
 The inertia matrix \textbf{J} is a 3×3 symmetric matrix that represents the rotational inertia (treghet) of a rigid body. 
 \[
@@ -67,6 +69,47 @@ If a body has planes of symmetry, the products of inertia with respect to those 
     \item One plane of symmetry makes the corresponding products of inertia zero.
     \item Two orthogonal planes of symmetry make more products all products of inertia zero, resulting in a diagonal inertia matrix.
 \end{itemize}
+
+\subsection{Finding new COM}
+
+% Generalized formulas for finding a new center of mass and inertia matrix
+In order to find the inertia matrix with respect to the new center of mass, we first determine the vector from the original center of mass to the new center of mass. This vector is denoted as $\mathbf{r}_s$.
+
+\begin{equation}
+    \mathbf{r}_s = -\frac{m_0}{m_0 + m} \mathbf{r}_0,
+\end{equation}
+
+
+The new inertia matrix, $\mathbf{M}_0$, with respect to the original center of mass can be calculated as:
+\begin{equation}
+    \mathbf{M}_0 = \mathbf{M}_{\text{old}} - m_0 \left( \mathbf{r}_0 \times \right) \left( \mathbf{r}_0 \times \right),
+\end{equation}
+where $\mathbf{M}_{\text{old}}$ is the original inertia matrix.
+\\
+\\
+To find the inertia matrix, $\mathbf{M}_c$, with respect to the new center of mass, we use the parallel axis theorem:
+\begin{equation}
+    \mathbf{M}_c = \mathbf{M}_0 + (m + m_0) \left( \mathbf{r}_s \times \right) \left( \mathbf{r}_s \times \right),
+\end{equation}
+\\
+\\
+Combining the two steps, the complete formula for the new inertia matrix with respect to the new center of mass, $\mathbf{M}_c$, is:
+\begin{equation}
+    \mathbf{M}_c = \mathbf{M}_{\text{old}} - m_0 \left( \mathbf{r}_0 \times \right) \left( \mathbf{r}_0 \times \right) + (m + m_0) \left( \mathbf{r}_s \times \right) \left( \mathbf{r}_s \times \right).
+\end{equation}
+\\
+\\
+In these equations:
+\begin{itemize}
+    \item $\mathbf{r}_0$: vector from the original center of mass to the added mass $m_0$
+    \item $\mathbf{r}_s$: vector from the original center of mass to the new center of mass
+    \item $\mathbf{M}_{\text{old}}$: original inertia matrix before adding mass $m_0$
+    \item $\mathbf{M}_0$: inertia matrix with respect to the original center of mass, including the added mass $m_0$
+    \item $\mathbf{M}_c$: inertia matrix with respect to the new center of mass
+\end{itemize}
+
+
+
 
 \subsection{Parallel Axis Theorem}
 The Parallel Axis Theorem states that the moment of inertia \(J\) of a rigid body about any axis is given by:
