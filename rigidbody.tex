@@ -37,7 +37,15 @@ The Newton-Euler equations referenced to the center of mass are given by:
 \begin{equation}
     \mathbf{T}_{bc} = \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
 \end{equation}
-
+More complicated equations //Someone figure out when to use this instead plz:
+We use this when the forces and torques are not applied at the center of mass. The equations are given by:
+\begin{equation}
+    \vec{F}_{bo} = m \vec{a}_c
+\end{equation}
+    
+\begin{equation}
+    \vec{T}_{bo} = \vec{r}_g \times m \vec{a}_c + \vec{M}_{b/c} \cdot \vec{\alpha}_{ib} + \vec{\omega}_{ib} \times \left( \vec{M}_{b/c} \cdot \vec{\omega}_{ib} \right)
+\end{equation}    
 In these equations:
 \begin{itemize}
     \item $\mathbf{F}_{bc}$: Force acting on the body at the center of mass
