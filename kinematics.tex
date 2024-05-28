@@ -54,7 +54,10 @@ Now lets say frame $a$ relative to frame $i$ is rotated by $\theta$ about the $x
 \begin{equation}
     \mathbf{R}_i^a = \mathbf{R}_z(\psi)\mathbf{R}_y(\phi)\mathbf{R}_x(\theta)
 \end{equation}
-Which means that $\mathbf{R}_i^a$ is called the \textit{rotation matrix} from frame $a$ to frame $i$. \newline
+Which means that $\mathbf{R}_i^a$ is called the \textit{rotation matrix} from frame $a$ to frame $i$. Visually this is seen as moving the referance frame from $a$ to $i$, but it is used in transforming a vector from $i$ to $a$ (THE OPPOSITE ARG) for example: 
+\begin{equation}
+    \mathbf{v}_b = \mathbf{R}_i^b\mathbf{v}_i
+\end{equation}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=1, trim={7cm 3.5cm 7cm 16.5cm}, clip]{figures/arbitrary_axis_rotation.pdf}
@@ -116,6 +119,11 @@ where \( \vec{v}_{p/b} \) is the velocity of point \( p \) relative to the body 
 
 Here, \( \dot{p}_x, \dot{p}_y, \dot{p}_z \) are the time derivatives of the coordinates of point \( p \) in the body frame.
     
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Alternative approach}
+    This can also just be found by finding a the function for the point p in the zero frame ie:  (\( \vec{r}_{p/0} \)) and derivating this with respect to time. Remebering the importance of the chain rule this becomes equivalent and easy to solve on a beast calculator. (contact 41401071 for good price on beast calculator)
+\end{itemize}
 
 
 \subsection{Angular Velocity}
