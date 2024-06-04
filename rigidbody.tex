@@ -37,17 +37,19 @@ The Newton-Euler equations referenced to the center of mass are given by:
 \begin{equation}
     \mathbf{T}_{bc} = \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
 \end{equation}
-More complicated equations //Someone figure out when to use this instead plz:
+More complicated equations \\
 We use this when the forces and torques are not applied at the center of mass. The equations are given by:
+The total torque acting in a arbitrary point P is given by:
 \begin{equation}
     \vec{F}_{bo} = m \vec{a}_c
 \end{equation}
-    
+
 \begin{equation}
-    \vec{T}_{bo} = \vec{r}_g \times m \vec{a}_c + \vec{M}_{b/c} \cdot \vec{\alpha}_{ib} + \vec{\omega}_{ib} \times \left( \vec{M}_{b/c} \cdot \vec{\omega}_{ib} \right)
+    \mathbf{T}_{p} = \vec{r}_{c/p} \times m \vec{a}_c \cdot \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
 \end{equation}    
 In these equations:
 \begin{itemize}
+    \item $\vec{r}_{p/c}$ is the vector from the point P to the center of mass.
     \item $\mathbf{F}_{bc}$: Force acting on the body at the center of mass
     \item $m$: Total mass of the body
     \item $\mathbf{a}_c$: Acceleration of the center of mass
@@ -86,7 +88,13 @@ In order to find the inertia matrix with respect to the new center of mass, we f
 \begin{equation}
     \mathbf{r}_s = -\frac{m_0}{m_0 + m} \mathbf{r}_0,
 \end{equation}
-
+where: 
+\begin{itemize}
+    \item $m_0$: mass of the added mass
+    \item $m$: total mass of the body (including the added mass $m_0$)
+    \item $\mathbf{r}_0$: vector from the original center of mass to the added mass $m_0$
+    \item $\mathbf{r}_s$: vector from the original center of mass to the new center of mass
+\end{itemize}
 
 The new inertia matrix, $\mathbf{M}_0$, with respect to the original center of mass can be calculated as:
 \begin{equation}
