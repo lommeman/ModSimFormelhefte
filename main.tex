@@ -21,6 +21,9 @@
 
 \usepackage{listings} % Include the listings package
 \usepackage{xcolor} % for setting colors
+\usepackage[top=0.5in, left=0.5in, right=0.5in]{geometry} % for setting the margin
+\usepackage{titlesec}
+\titlespacing*{\section}{0.1pt}{0.1pt}{\parskip}
 
 % Define the MATLAB style
 \lstdefinestyle{MATLAB}{
@@ -76,6 +79,7 @@
 \include{generalized_forces}
 \include{state_space_formulations}
 \include{Numeric simulation}
+\include{BondGraph}
 
 %bare et forslag om vi skal ha med dette 
 \include{Div matte}
