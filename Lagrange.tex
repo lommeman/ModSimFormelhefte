@@ -13,9 +13,9 @@ The generalized coordinates are $\mathbf{q} \in \mathbb{R}^n$, where $n \geq \te
 Where $T$ is the kinetic energy, $V$ is the potential energy, $\mathbf{q}$ is the generalized coordinates, $\dot{\mathbf{q}}$ is the generalized velocities, $z \in \mathbb{R}^n $ is the lagrangian multiplier and $n$ is the number of constraints. It is also valid to use $+\mathbf{z}^\top\mathbf{c}$. Equation \eqref{eq:Euler_Lagrange} \newline
 \begin{subequations}
 \begin{align}
-    T = \frac{1}{2}m\dot{\mathbf{p}}^\top\dot{\mathbf{p}} + \frac{1}{2}I\dot{\theta}^2 \\
+    T = \frac{1}{2}m\dot{\mathbf{p}}^\top\dot{\mathbf{p}} + \frac{1}{2}J\dot{\theta}^2 \\
     \mathbf{\dot{p}} = \frac{\partial \mathbf{p}}{\partial \mathbf{q}}\dot{\mathbf{q}} \\
-    T = \frac{1}{2}mv^\top v + \frac{1}{2}I\omega^\top \omega \\
+    T = \frac{1}{2}mv^\top v + \frac{1}{2}J\omega^\top \omega \\
     V = \underbrace{mgh}_{\text{gravity}}  + \underbrace{\frac{1}{2}kx^2}_{\text{potential energy in spring}}  \\
     T = \frac{1}{2}\dot{\mathbf{q}}^\top\mathbf{W}\dot{\mathbf{q}} \\
     \mathbf{W} = m\left(\frac{\partial \mathbf{p}}{\partial \mathbf{q}}\right)^\top \frac{\partial \mathbf{p}}{\partial \mathbf{q}} + \mathbf{\beta}^\top \mathbf{J}\mathbf{\beta}

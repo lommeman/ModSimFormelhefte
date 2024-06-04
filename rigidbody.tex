@@ -5,26 +5,24 @@ A \textbf{rigid body}; the distances between any two points within the body rema
 \textbf{Degrees of Freedom:} A rigid body in three-dimensional space has six degrees of freedom: three translational (movement along the x, y, and z axes) and three rotational (rotation about the x, y, and z axes).
 
 \subsection{Translational Motion (Newton's Second Law)}
-\[
-\vec{F}_{\text{ext}} = m \vec{a}_{\text{cm}}
-\]
+\begin{equation}
+    \sum \vec{F} = m \vec{a}_c
+\end{equation}
 
 \subsection{Rotational Motion (Euler's Equations)}
 
 The rotational motion of the rigid body is described by Euler's equations, which relate the rate of change of angular momentum to the external moments (torques) acting on the body. These equations are given by:
-
-\[
-\vec{T}_{\text{ext}} = \frac{d \vec{H}}{dt} + \vec{\omega} \times \vec{H}
-\]
+\begin{equation}
+    \sum \vec{T} = \dot{\vec{h}} + \vec{\omega} \times \mathbf{J}\vec{\omega} + r \times m\vec{a}
+\end{equation}
 
 where:
 \begin{itemize}
-    \item \( \vec{T}_{\text{ext}} \) is the resultant external moment (torque) acting on the body.
-    \item \( \vec{H} = \mathbf{J} \vec{\omega} \) is the angular momentum of the body.
+    \item $\sum \vec{T}$ is the resultant external moment (torque) acting on the body.
     \item \( \mathbf{J} \) is the inertia tensor of the body.
     \item \( \vec{\omega} \) is the angular velocity of the body.
-    \item \( \frac{d \vec{H}}{dt} \) is the time derivative of the angular momentum.
-    \item \( \vec{\omega} \times \vec{H} \) is the term representing the gyroscopic effect.
+    \item $\dot{\vec{h}}$ is the time derivative of the angular momentum.
+    \item \( \vec{\omega} \times \mathbf{J}\vec{\omega} \) is the term representing the gyroscopic effect.
 \end{itemize}
 
 \subsection{Combined Newton-Euler Equations}
