@@ -4,18 +4,28 @@ The Newton-Euler equations referenced to the center of mass in an inertial frame
 \begin{equation}
     \mathbf{F}_{bc} = m \mathbf{a}_c
 \end{equation}
-\begin{equation}
-    \mathbf{T}_{bc} = \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
-\end{equation}
+\begin{subequations}
+    \begin{equation}
+        \mathbf{T}_{bc} = \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
+    \end{equation}
+    \begin{equation}
+        \boldsymbol{\tau} = \mathbf{J}\dot{\boldsymbol{\omega}} + \boldsymbol{\omega} \times \mathbf{J}\boldsymbol{\omega}
+    \end{equation}
+\end{subequations}
 \textbf{More complicated equations: } \newline
 We use this when the forces and torques are not applied at the center of mass. The equations are given by:
 The total torque acting in a arbitrary point P is given by:
 \begin{equation}
     \vec{F}_{bo} = m \vec{a}_c
 \end{equation}
-\begin{equation}
-    \mathbf{T}_{p} = \vec{r}_{c/p} \times m \vec{a}_c \cdot \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
-\end{equation}   
+\begin{subequations}
+    \begin{equation}
+        \mathbf{T}_{p} = \vec{r}_{c/p} \times m \vec{a}_c \cdot \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
+    \end{equation}
+    \begin{equation}
+        \boldsymbol{\tau} = \mathbf{J}\dot{\boldsymbol{\omega}} + \boldsymbol{\omega} \times \mathbf{J}\boldsymbol{\omega} + \mathbf{r} \times m \mathbf{a}
+    \end{equation}
+\end{subequations}
 \textbf{Even more complicated equations: } \newline
 If we apply newton euler equations in a non inertial frame, we get the following equations:
 Non inertial frame means that the frame is accelerating. The equations are given by:
