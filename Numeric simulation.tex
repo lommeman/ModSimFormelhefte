@@ -1,8 +1,38 @@
 \section{Nummerical Simulation}
-
-\subsection{Explicit }
-
-\textbf{The Forward Euler method}
+\begin{figure}[H]
+    \centering
+    \includepdf[width=\linewidth]{figures/sim1.pdf}
+\end{figure}
+\newpage
+\begin{figure}[H]
+    \centering
+    \includepdf[width=\linewidth]{figures/sim2.pdf}
+\end{figure}
+\newpage
+\subsection{Other notes: }
+\subsubsection{Stability}
+The region of stability for an RK of order $o$ is defined as: 
+\begin{equation}
+    S = \left\{\quad \lambda \Delta t \quad \text{s.t.} \quad \left\lvert \sum_{k=0}^{o} \frac{(\lambda \Delta t)^k}{k!}\right\rvert \leq 1 \right\} 
+\end{equation}
+\subsubsection{Butcher tableau definitions when using stability function}
+If you have the tableau: $
+    \begin{array}{c|ccc}
+    c_1 & a_{11} & \cdots & a_{1s} \\
+    \vdots & \vdots & & \vdots \\
+    c_s & a_{s1} & \cdots & a_{ss} \\
+    \hline
+    & b_1 & \cdots & b_s \\
+    \end{array}$, then $\mathbf{b} = \begin{bmatrix}b_1 \\ \vdots \\ b_s\end{bmatrix}$, $\mathbf{c} = \begin{bmatrix}c_1 \\ \vdots \\ c_s\end{bmatrix}$ and $\mathbf{A} = \begin{bmatrix}a_{11} & \cdots & a_{1s} \\ \vdots & & \vdots \\ a_{s1} & \cdots & a_{ss}\end{bmatrix}$ \newline
+Also noteworthy; the $\mathbf{1}$ vector, is defined as the vector that transforms the term into the desired dimension. From the stability function definition, we have the term $\mathbf{A}-\mathbf{1}\mathbf{b}^\top$. Let's say $\mathbf{b} \in \mathbb{R}^2$ and $\mathbf{A} \in \mathbb{R}^2$, then $\mathbf{1} = \begin{bmatrix}1 \\ 1\end{bmatrix}$.
+\subsubsection{IRK vs ERK stability}
+Explicit RK methods achieve an order $o = s$ (number of stages) for $s \leq 4$ and then the order “stalls" and does not increase as fast as s. This was bad news for high-order explicit RK methods in terms of efficiency (complexity vs. accuracy). In contrast, implicit RKmethods can achieve $o = 2s$ for any number of stages $s$.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures/RKStability_Table.pdf}
+\end{figure}
+\newpage
+\subsection{The Forward Euler method}
 \begin{subequations}
 \begin{align}
     x_{k+1} = x_k + \Delta t \cdot f(x_k)\\
@@ -14,7 +44,7 @@ This method is first order, which means global error E is proportional to step s
 
 Stable for: \[\Delta t < - \frac{2}{\lambda}\]
 
-\textbf{Runke gutta 2: Mid Point Method }
+\subsection{Runke gutta 2: Mid Point Method }
 
 Want to evaluate \(\dot{x} = f(x)\) between \(t_k\) and \(t_{k+1}\) (omitting \(u\) and \(t\) for ease of notation):
 \begin{equation}
@@ -43,7 +73,10 @@ The stability criterion is given by:
 \left| 1 + \Delta t \lambda + \frac{(\Delta t \lambda)^2}{2} \right| \leq 1
 \end{equation}
 
-\textbf{4tho-Order runke gutta }
+\textbf{4th-Order runke gutta }
+\\
+\\
+Example of the calculations of each stage:
 
 \begin{align}
 k_1 &= f(t_n, x_n) \\
