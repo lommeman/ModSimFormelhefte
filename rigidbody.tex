@@ -25,35 +25,6 @@ where:
     \item \( \vec{\omega} \times \mathbf{J}\vec{\omega} \) is the term representing the gyroscopic effect.
 \end{itemize}
 
-\subsection{Combined Newton-Euler Equations}
-The Newton-Euler equations referenced to the center of mass in an inertial frame are given by:
-
-\begin{equation}
-    \mathbf{F}_{bc} = m \mathbf{a}_c
-\end{equation}
-
-\begin{equation}
-    \mathbf{T}_{bc} = \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
-\end{equation}
-More complicated equations \\
-We use this when the forces and torques are not applied at the center of mass. The equations are given by:
-The total torque acting in a arbitrary point P is given by:
-\begin{equation}
-    \vec{F}_{bo} = m \vec{a}_c
-\end{equation}
-
-\begin{equation}
-    \mathbf{T}_{p} = \vec{r}_{c/p} \times m \vec{a}_c \cdot \mathbf{M}_{b/c} \cdot \boldsymbol{\alpha}_{ib} + \boldsymbol{\omega}_{ib} \times \left( \mathbf{M}_{b/c} \cdot \boldsymbol{\omega}_{ib} \right)
-\end{equation}   
-Even more complicated equations \\
-If we apply newton euler equations in a non inertial frame, we get the following equations:
-Non inertial frame means that the frame is accelerating. The equations are given by:
-(børge wont do us like this though??)(this comes from setting up the equations of motion in a non inertial frame and then transforming them to the inertial frame with a rotation matrix)
-\begin{equation}
-    m \dot{\vec{v}}_c^a + m \vec{\omega}_ai^a \times \vec{v}_c^a = \vec{F}_{ac}^{a}
-\end{equation}
-
-
 In these equations:
 \begin{itemize}
     \item $\vec{r}_{p/c}$ is the vector from the point P to the center of mass.
