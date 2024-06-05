@@ -38,11 +38,14 @@ With test-system $\dot{x}=\lambda x, \quad \lambda < 0$: \newline
 
 This method is first order, which means global error E is proportional to step size $\Delta t$. 
 
-With explicit euler the system is stable for: \[\Delta t < - \frac{2}{\lambda}\]
-With implicit euler the system is stable for: $$
+With explicit euler the system is stable for: \[\Delta t < - \frac{2}{\lambda}\] \newline
+With implicit euler the system is stable for: $\left\lvert1 - \Delta t \lambda \right\rvert > 1$ \newline
+Since $\lambda < 0$, any $\Delta t$ is OK!
+
+\subsection{Global and local error}
+If local order is $n$ and global order $m$, then $m = n - 1$.
 
 \subsection{Runke gutta 2: Mid Point Method Example }
-
 Want to evaluate \(\dot{x} = f(x)\) between \(t_k\) and \(t_{k+1}\) (omitting \(u\) and \(t\) for ease of notation):
 \begin{equation}
 x_{k+1} = x_k + \Delta t f\left( x \left( t_k + \frac{1}{2} \Delta t \right) \right)
