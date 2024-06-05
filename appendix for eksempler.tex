@@ -282,9 +282,8 @@ L^2 m_2 \ddot{\theta} + L m_2 \ddot{z} \sin \theta + L m_2 \dot{z} \dot{\theta} 
 
 
 
-
+\newpage
 \subsection{Angular accelration}
-\subsubsection{Gyroscope}
 
 \subsubsection{Klikka gyroscope}
 Taks: find the angular accelration of the disk in 1-frame of this monstrocity.
@@ -296,7 +295,7 @@ Taks: find the angular accelration of the disk in 1-frame of this monstrocity.
     \label{fig:hardcoregyro}
 \end{figure}
 
-You can either use the formula for angular accelration or you can find the agular velocity of the disk in a completely stationary frame and then differentiate it. The 0-frame in the picture is not stationary so we introduce a new i-frame that is stationary. Because of $\omega_0$ the 0-frame is rotated $\theta_0$ in the negative direction of the $x_0/x_i$-axis.
+You can either use the formula for angular accelration or you can find the agular velocity of the disk in a completely stationary frame and then differentiate it. The 0-frame in the picture is not stationary so we introduce a new i-frame that is stationary. Because of $\omega_0$ the 0-frame is rotated $\theta_0$ in the negative direction of the $x_0/x_i$-axis from the i-frame.
 The angular velocity of the disk expressed in diffrent frames are given by:
 \begin{equation}
     -\omega_0\vec{i_i} + \dot{\beta}\vec{k_0} + \omega_1 \vec{i_1}
@@ -315,6 +314,7 @@ transforming everything to the i-frame gives:
         0\\
         \dot{\beta}
     \end{bmatrix}
+    +
     R_x(-\theta_0)R_z(\beta)
     \begin{bmatrix}
         \omega_1 \\
@@ -342,6 +342,7 @@ Now we can differentiate and transform back to the 1-frame:
         0\\
         \dot{\beta}
     \end{bmatrix}
+    +
     R_x(-\theta_0)R_z(\beta)
     \begin{bmatrix}
         \omega_1 \\
@@ -359,3 +360,82 @@ using that $\dot{\theta_0} = \omega_0$ we get:
         \ddot{\beta}-\omega_0\omega_1\sin\beta
     \end{bmatrix}
 \end{equation}
+
+\subsubsection{Klikka Gyroscope 2}
+Taks: find the angular accelration of the disk in 1-frame of this monstrocity.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.7]{figures/gyro.png}
+    \caption{Klikka gyroscope 2}
+    \label{fig:hardcoregyro2}
+\end{figure}
+
+The fucked up thing here is that the angle between 1 and 0-frame is $\pi$ + $\theta$ and not $\theta$. Also the 1-frame is not stationary. We first define a completely stationary i-frame such that the 0-frame is rotated $\phi$ from the i-frame about the z-axis.
+The angular velocity of the disc:
+\begin{equation}
+    \omega_1\vec{k_i} + \dot{\theta}\vec{j_1} + \omega_2 \vec{k_1}
+\end{equation}
+Then we express everything in the i-frame:
+\begin{equation}
+    \begin{bmatrix}
+        0 \\
+        0\\
+        \omega_1
+    \end{bmatrix}
+    +
+    R_z(\phi)
+    \begin{bmatrix}
+        0 \\
+        \dot{\theta}\\
+        0
+    \end{bmatrix}
+    +
+    R_z(\phi)R_y(\theta+\pi)
+    \begin{bmatrix}
+        0 \\
+        0\\
+        \omega_2
+    \end{bmatrix}
+\end{equation}
+
+Then we diffrentiate and rotate to 1-frame:
+\begin{equation}
+\alpha^1 =
+    R_y(-\theta-\pi)
+    R_z(-\phi)
+    \frac{d}{dt}
+    \left(
+    \begin{bmatrix}
+        0 \\
+        0\\
+        \omega_1
+    \end{bmatrix}
+    +
+    R_z(\phi)
+    \begin{bmatrix}
+        0 \\
+        \dot{\theta}\\
+        0
+    \end{bmatrix}
+    +
+    R_z(\phi)R_y(\theta+\pi)
+    \begin{bmatrix}
+        0 \\
+        0\\
+        \omega_2
+    \end{bmatrix}
+    \right)
+\end{equation}
+using that $\dot{\phi} = \omega_1$ we get:
+\begin{equation}
+    \alpha^1 =
+    \begin{bmatrix}
+        \omega_2\dot{\theta}+\omega_1\dot{\theta}\cos\theta \\
+        \ddot{\theta} - \omega_1\omega_2\sin\theta \\
+        \omega_1\dot{\theta}\sin{\theta}
+    \end{bmatrix}
+\end{equation}
+
+
+
