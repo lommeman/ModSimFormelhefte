@@ -1,16 +1,8 @@
+\section{Appendix for eksempler}
 \subsection{Newton Euler dynamics and COM}
-
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{Skjermbilde 2024-05-23 kl. 18.56.18.png}
-    \caption{Caption}
-    \label{fig:enter-label}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.5]{figures/IRK psedo code.png}
-    \caption{IKR pseudo code}
 \end{figure}
 
 (a) Consider the satellite without the added mass. Use the Newton-Euler equations to derive the dynamics of the satellite, i.e., find expressions for $\ddot{\mathbf{r}}_c^i$ and $\dot{\boldsymbol{\omega}}_{ib}^b$.
@@ -109,6 +101,12 @@ The dynamics are now given by
     \left( \boldsymbol{\omega}_{ib}^b \right)^\times \mathbf{M}_c^b \boldsymbol{\omega}_{ib}^b = \frac{1}{6} m l^2 \left( \boldsymbol{\omega}_{ib}^b \right)^\times \boldsymbol{\omega}_{ib}^b = 0,
 \end{equation}
 
+\subsection{Pseudo code for Implicit Runge-Kutta}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.5]{figures/IRK psedo code.png}
+    \caption{IRK pseudo code, find more on page 144 in Gros}
+\end{figure}
 
 \subsection{Kinetic Energy of ball on beam}
 
@@ -360,14 +358,13 @@ using that $\dot{\theta_0} = \omega_0$ we get:
         \ddot{\beta}-\omega_0\omega_1\sin\beta
     \end{bmatrix}
 \end{equation}
-
+\newpage
 \subsubsection{Klikka Gyroscope 2}
 Taks: find the angular accelration of the disk in 1-frame of this monstrocity.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.7]{figures/gyro.png}
-    \caption{Klikka gyroscope 2}
     \label{fig:hardcoregyro2}
 \end{figure}
 
