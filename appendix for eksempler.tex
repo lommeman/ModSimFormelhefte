@@ -281,3 +281,81 @@ L^2 m_2 \ddot{\theta} + L m_2 \ddot{z} \sin \theta + L m_2 \dot{z} \dot{\theta} 
 \]
 
 
+
+
+\subsection{Angular accelration}
+\subsubsection{Gyroscope}
+
+\subsubsection{Klikka gyroscope}
+Taks: find the angular accelration of the disk in 1-frame of this monstrocity.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.7]{figures/klikka_eksempel.png}
+    \caption{Klikka gyroscope}
+    \label{fig:hardcoregyro}
+\end{figure}
+
+You can either use the formula for angular accelration or you can find the agular velocity of the disk in a completely stationary frame and then differentiate it. The 0-frame in the picture is not stationary so we introduce a new i-frame that is stationary. Because of $\omega_0$ the 0-frame is rotated $\theta_0$ in the negative direction of the $x_0/x_i$-axis.
+The angular velocity of the disk expressed in diffrent frames are given by:
+\begin{equation}
+    -\omega_0\vec{i_i} + \dot{\beta}\vec{k_0} + \omega_1 \vec{i_1}
+\end{equation}
+transforming everything to the i-frame gives:
+\begin{equation}
+    \begin{bmatrix}
+        -\omega_0 \\
+        0\\
+        0
+    \end{bmatrix}
+    +
+    R_x(-\theta_0)
+    \begin{bmatrix}
+        0 \\
+        0\\
+        \dot{\beta}
+    \end{bmatrix}
+    R_x(-\theta_0)R_z(\beta)
+    \begin{bmatrix}
+        \omega_1 \\
+        0\\
+        0
+    \end{bmatrix}
+\end{equation}
+
+Now we can differentiate and transform back to the 1-frame:
+\begin{equation}
+    \alpha^1 =
+    R_z(-\beta)
+    R_x(\theta_0)
+    \frac{d}{dt}
+    \left(
+    \begin{bmatrix}
+        -\omega_0 \\
+        0\\
+        0
+    \end{bmatrix}
+    +
+    R_x(-\theta_0)
+    \begin{bmatrix}
+        0 \\
+        0\\
+        \dot{\beta}
+    \end{bmatrix}
+    R_x(-\theta_0)R_z(\beta)
+    \begin{bmatrix}
+        \omega_1 \\
+        0\\
+        0
+    \end{bmatrix}
+    \right)
+\end{equation}
+using that $\dot{\theta_0} = \omega_0$ we get:
+\begin{equation}
+    \alpha^1 =
+    \begin{bmatrix}
+        \omega_0\dot{\beta}\sin\beta\\
+        \omega_1\dot{\beta}+ \omega_0\dot{\beta}\cos\beta\\
+        \ddot{\beta}-\omega_0\omega_1\sin\beta
+    \end{bmatrix}
+\end{equation}
